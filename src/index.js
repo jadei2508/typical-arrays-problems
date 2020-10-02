@@ -16,7 +16,19 @@ exports.min = function min (array) {
 }
 
 exports.max = function max (array) {
-    return 0;
+    if(array === undefined || array.length === 0) {
+        return 0;
+    }
+    let length = array.length;
+    let max = array[0];
+    let i = 1;
+    while(i < length) {
+        if(max < array[i]) {
+            max = array[i];
+        }
+        i++;
+    }
+    return max;
 }
 
 exports.avg = function avg (array) {
